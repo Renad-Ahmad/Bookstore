@@ -7,16 +7,16 @@ let books = [
 ]
 
 
-function findBookById(id){
+function findBook(info){
 
    for(let i = 0; i < books.length;i++){
       var innerArrayLength = books[i].length;
       for (let j = 0; j < innerArrayLength; j++) {
-         let bookId = books[i][j][1];
+         let booksItem = books[i][j][1];
          // let bookInfo = books[i];
 
          // console.log(bookId);
-         if(bookId == id){
+         if(booksItem == info){
             let bookInfo = books[i];          
             console.log(bookInfo.toString());
          }  
@@ -24,26 +24,4 @@ function findBookById(id){
    }
 }
 
-function findBookByName(BookTitle){
-
-   for(let i = 0; i <books.length;i++){
-      var innerArrayLength = books[i].length;
-
-      for (let j = 0; j < innerArrayLength; j++) {
-          let bookName = books[i][j][1];
-         // let bookInfo = books[i];
-
-         // console.log(bookName);
-         if(bookName == BookTitle){
-            let bookInfo = books[i];
-          console.log(bookInfo.toString());            
-          }
-         // else {
-         //    console.log("not found")
-         // }      
-      }
-   }
-}
-
- findBookById(3);
-findBookByName("Zero to One");
+ findBook(4);
