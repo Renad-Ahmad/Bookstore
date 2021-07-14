@@ -5,4 +5,24 @@ let books = [
    [["id",4],["Book Title","Zero to One"],["Author","Peter Thiel"],["Price",45.0],["Quantity",12]] ,
    [["id",5],["Book Title","You don't know JS"],["Author","Kyle Simpson"],["Price",39.9],["Quantity",9]] 
 ]
-console.log(books);
+
+
+function findBookById(id){
+
+   for(let i = 0; i <books.length;i++){
+      var innerArrayLength = books[i].length;
+
+      for (let j = 0; j < innerArrayLength; j++) {
+          let bookId = books[i][j][1];
+         let bookInfo = books[i];
+
+         if(bookId == id){
+            console.log(id);            
+            console.log(bookInfo);
+         };
+         break;
+     }      
+   }
+}
+
+findBookById(4)
