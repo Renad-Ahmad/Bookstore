@@ -13,9 +13,7 @@ function findBook(info){
       var innerArrayLength = books[i].length;
       for (let j = 0; j < innerArrayLength; j++) {
          let booksItem = books[i][j][1];
-         // let bookInfo = books[i];
 
-         // console.log(bookId);
          if(booksItem == info){
             let bookInfo = books[i];          
             console.log(bookInfo.toString());
@@ -30,10 +28,8 @@ function findBookById(id){
    for(let i = 0; i < books.length;i++){
       var innerArrayLength = books[i].length;
       for (let j = 0; j < innerArrayLength; j++) {
-         let booksItem = books[i][j][1];
           let bookId = books[i][0][1];
 
-         //  console.log(bookId);
          if(bookId == id){
             let bookInfo = books[i];          
             console.log(bookInfo.toString());
@@ -44,16 +40,14 @@ function findBookById(id){
 }
 
 //find book by any name 
-function findBookById(name){
+function findBookByName(name){
 
    for(let i = 0; i < books.length;i++){
       var innerArrayLength = books[i].length;
       for (let j = 0; j < innerArrayLength; j++) {
-         let booksItem = books[i][j][1];
           let bookName = books[i][1][1];
 
-         //  console.log(bookId);
-         if(bookName == name){
+          if(bookName == name){
             let bookInfo = books[i];          
             console.log(bookInfo.toString());
             break;
@@ -62,7 +56,24 @@ function findBookById(name){
    }
 }
 
+//find book by any Author 
+function findBookByAuthor(author){
 
-//  findBook(4);
-//  findBookById(1);
-findBookById("But how do it know")
+   for(let i = 0; i < books.length;i++){
+      var innerArrayLength = books[i].length;
+      for (let j = 0; j < innerArrayLength; j++) {
+          let bookAuthor = books[i][2][1];
+
+         if(bookAuthor == author){
+            let bookInfo = books[i];          
+            console.log(bookInfo.toString());
+            break;
+         }  
+      }      
+   }
+}
+
+// findBook(4);
+findBookById(4);
+findBookByName("You don't know JS")
+findBookByAuthor("Robert Cecil Martin");
