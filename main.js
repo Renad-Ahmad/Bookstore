@@ -9,20 +9,39 @@ let books = [
 
 function findBookById(id){
 
-   for(let i = 0; i <books.length;i++){
+   for(let i = 0; i < books.length;i++){
       var innerArrayLength = books[i].length;
-
       for (let j = 0; j < innerArrayLength; j++) {
-          let bookId = books[i][j][1];
-         let bookInfo = books[i];
+         let bookId = books[i][j][1];
+         // let bookInfo = books[i];
 
          if(bookId == id){
-            console.log(id);            
-            console.log(bookInfo);
-         };
-         break;
+            console.log(id);  
+            let bookInfo = books[i];          
+            console.log(bookInfo + "\n");
+         }
      }      
    }
 }
 
-findBookById(4)
+// function findBookByName(name){
+
+//    for(let i = 0; i <books.length;i++){
+//       var innerArrayLength = books[i].length;
+
+//       for (let j = 0; j < innerArrayLength; j++) {
+//           let bookName = books[i][j][1];
+//          let bookInfo = books[i];
+
+//          console.log(bookName);
+//          // if(bookId == name){
+//          //    console.log(name);            
+//          // }
+//          // else {
+//          //    console.log("not found")
+//      }      
+//    }
+// }
+
+findBookById(3);
+// findBookByName("But how do it know");
