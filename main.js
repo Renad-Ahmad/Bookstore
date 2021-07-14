@@ -24,4 +24,24 @@ function findBook(info){
    }
 }
 
- findBook(4);
+
+function findBookById(id){
+
+   for(let i = 0; i < books.length;i++){
+      var innerArrayLength = books[i].length;
+      for (let j = 0; j < innerArrayLength; j++) {
+         let booksItem = books[i][j][1];
+          let bookId = books[i][0][1];
+
+         //  console.log(bookId);
+         if(bookId == id){
+            let bookInfo = books[i];          
+            console.log(bookInfo.toString());
+            break;
+         }  
+      }      
+   }
+}
+
+//  findBook(4);
+ findBookById(1);
