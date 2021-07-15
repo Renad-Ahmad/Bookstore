@@ -92,14 +92,15 @@ function checkBookQuantity( id, number){
    }
 }
 
-
+//issuing An Invoice
 function issuingAnInvoice(id, number, credit){
+   
    let checkQuantity = checkBookQuantity( id, number);
    let foundTheBook =   findBookById(id);
+
    let priceCheck = foundTheBook[3][1];
    let bookName = foundTheBook[1][1];
    let bookAuthor = foundTheBook[2][1];
-
    let total = priceCheck * number;
 
    if(checkQuantity == true){
@@ -119,7 +120,7 @@ function issuingAnInvoice(id, number, credit){
 
 // findBook(4);
 //  findBookById(4);
-//  findBookByName("You don't know JS")
-//  findBookByAuthor("Robert Cecil Martin");
-//  checkBookQuantity(3,1);
-issuingAnInvoice(1, 1,80);
+// findBookByName("You don't know JS")
+// findBookByAuthor("Robert Cecil Martin");
+// checkBookQuantity(3,1);
+issuingAnInvoice(5, 1,80);
