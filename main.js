@@ -33,7 +33,7 @@ function findBookById(id){
 
          if(bookId == id){
             let bookInfo = books[i];     
-            console.log(bookInfo.toString());     
+           // console.log(bookInfo.toString());     
             return bookInfo;
          }  
       }      
@@ -50,7 +50,7 @@ function findBookByName(name){
 
           if(bookName == name){
             let bookInfo = books[i];          
-            console.log(bookInfo.toString());
+           // console.log(bookInfo.toString());
             return bookInfo;
          }  
       }      
@@ -67,20 +67,23 @@ function findBookByAuthor(author){
 
          if(bookAuthor == author){
             let bookInfo = books[i];          
-            console.log(bookInfo.toString());
+           // console.log(bookInfo.toString());
             return bookInfo;
          }  
       }      
    }
 }
 
+//check book Quantity 
 function checkBookQuantity( id, number){
 
    let foundTheBook =   findBookById(id);
    let quantityCheck = foundTheBook[4][1];
-   console.log(quantityCheck);
+   // console.log(quantityCheck);
    if (number <= quantityCheck && number > 0){
-      console.log("t");
+      // console.log("t");
+      // let newQuantity = quantityCheck - number;
+      // console.log(newQuantity);
       return true;
    }
    else{
@@ -89,8 +92,34 @@ function checkBookQuantity( id, number){
    }
 }
 
+
+function issuingAnInvoice(id, number, credit){
+   let checkQuantity = checkBookQuantity( id, number);
+   let foundTheBook =   findBookById(id);
+   let priceCheck = foundTheBook[3][1];
+   let bookName = foundTheBook[1][1];
+   let bookAuthor = foundTheBook[2][1];
+
+   let total = priceCheck * number;
+
+   if(checkQuantity == true){
+      if(credit >= total){
+         console.log("Book Title: " + bookName + " By: " + bookAuthor + "\ntotal:  " + total );
+         return "Book Title: " + bookName + " By: " + bookAuthor + "\n total:  " + total ;
+
+      }
+      else{
+         console.log("sorry your credit is not enough");
+      }
+   }
+   else{
+      console.log("sorry we don't have enough books");
+   }
+}
+
 // findBook(4);
- findBookById(4);
- findBookByName("You don't know JS")
- findBookByAuthor("Robert Cecil Martin");
- checkBookQuantity(3,1);
+//  findBookById(4);
+//  findBookByName("You don't know JS")
+//  findBookByAuthor("Robert Cecil Martin");
+//  checkBookQuantity(3,1);
+issuingAnInvoice(1, 1,80);
