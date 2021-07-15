@@ -17,6 +17,7 @@ function findBook(info){
          if(booksItem == info){
             let bookInfo = books[i];          
             console.log(bookInfo.toString());
+            return bookInfo;
          }  
       }      
    }
@@ -31,9 +32,9 @@ function findBookById(id){
           let bookId = books[i][0][1];
 
          if(bookId == id){
-            let bookInfo = books[i];          
-            console.log(bookInfo.toString());
-            break;
+            let bookInfo = books[i];     
+            console.log(bookInfo.toString());     
+            return bookInfo;
          }  
       }      
    }
@@ -50,7 +51,7 @@ function findBookByName(name){
           if(bookName == name){
             let bookInfo = books[i];          
             console.log(bookInfo.toString());
-            break;
+            return bookInfo;
          }  
       }      
    }
@@ -67,13 +68,29 @@ function findBookByAuthor(author){
          if(bookAuthor == author){
             let bookInfo = books[i];          
             console.log(bookInfo.toString());
-            break;
+            return bookInfo;
          }  
       }      
    }
 }
 
+function checkBookQuantity( id, number){
+
+   let foundTheBook =   findBookById(id);
+   let quantityCheck = foundTheBook[4][1];
+   console.log(quantityCheck);
+   if (number <= quantityCheck && number > 0){
+      console.log("t");
+      return true;
+   }
+   else{
+      console.log("f");
+      return false;
+   }
+}
+
 // findBook(4);
-findBookById(4);
-findBookByName("You don't know JS")
-findBookByAuthor("Robert Cecil Martin");
+ findBookById(4);
+ findBookByName("You don't know JS")
+ findBookByAuthor("Robert Cecil Martin");
+ checkBookQuantity(3,1);
